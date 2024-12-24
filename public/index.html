@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Pay Payment</title>
+</head>
+<body>
+    <h1>Rental Payment</h1>
+    <label for="amount">Enter Amount (INR): </label>
+    <input type="number" id="amount" name="amount" value="1" />
+    <br><br>
+    <button id="googlePayButton">Pay with Google Pay</button>
+
+    <script>
+        document.getElementById("googlePayButton").addEventListener("click", function() {
+            var amount = document.getElementById("amount").value;
+            // Redirect to Google Pay
+            window.location.href = `https://pay.google.com/gp/p/ui/pay?amount=${amount}&currency=INR`;
+        });
+    </script>
+</body>
+</html>
